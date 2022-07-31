@@ -1,33 +1,28 @@
-// set initial count
-let count = 0;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
 
-//select value and buttons
-const value = document.querySelector('#value');
-const btns = document.querySelector('.btn');
-
-btns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-        const styles = e.currentTarget.classList;
-        if(styles.contains('decrease')) {
-            count--;
-        }
-        else if(styles.contains('increase')) {
-            count++;
-        }
-        else{
-            count = 0;
-        }
-        if(count > 0){
-            value.style.color = 'green'
-        }
-        if (count < 0){
-            value.style.color = 'red'
-        }
-        if (count === 0){
-            value.style.color = "#222"
-        }
-        value.textContent = count;
-    });
-});
-
-
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+ <main>
+  <div class="container">
+    <h1>
+counter
+    </h1>
+    <span id="value">0</span>
+  <div class="button-container">
+    <button class="btn decrease">decrease</button>
+    <button class="btn reset">reset</button>
+    <button class="btn increase">increase</button>
+  </div>
+  </div>
+ </main>
+    <!-- javascript -->
+    <script src="app.js"></script>
+  </body>
+</html>
